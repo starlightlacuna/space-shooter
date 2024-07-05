@@ -4,60 +4,64 @@
 [ext_resource type="Script" path="res://scripts/auto_cannon_projectile.gd" id="2_50d1i"]
 [ext_resource type="Script" path="res://scripts/damage.gd" id="2_ay5f6"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_31y2n"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_rcdjp"]
 atlas = ExtResource("1_7q1o6")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_j2y1t"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_243mx"]
 atlas = ExtResource("1_7q1o6")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_v15wv"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_dj4kw"]
 atlas = ExtResource("1_7q1o6")
 region = Rect2(64, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kqup1"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_hmibs"]
 atlas = ExtResource("1_7q1o6")
 region = Rect2(96, 0, 32, 32)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_kycn8"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_6nahg"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_31y2n")
+"texture": SubResource("AtlasTexture_rcdjp")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_j2y1t")
+"texture": SubResource("AtlasTexture_243mx")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_v15wv")
+"texture": SubResource("AtlasTexture_dj4kw")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_kqup1")
+"texture": SubResource("AtlasTexture_hmibs")
 }],
 "loop": true,
 "name": &"default",
-"speed": 10.0
+"speed": 12.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k0abo"]
-radius = 3.0
-height = 10.0
+radius = 4.0
+height = 12.0
 
-[node name="AutoCannonProjectile" type="AnimatedSprite2D"]
-sprite_frames = SubResource("SpriteFrames_kycn8")
-frame_progress = 0.0302458
+[node name="AutoCannonProjectile" type="Area2D"]
+collision_layer = 2
+collision_mask = 4
 script = ExtResource("2_50d1i")
-
-[node name="Hitbox" type="RigidBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-shape = SubResource("CapsuleShape2D_k0abo")
 
 [node name="Damage" type="Node" parent="."]
 script = ExtResource("2_ay5f6")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_6nahg")
+autoplay = "default"
+frame = 3
+frame_progress = 0.44603
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2)
+shape = SubResource("CapsuleShape2D_k0abo")
+
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 
-[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

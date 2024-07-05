@@ -46,6 +46,7 @@ position = Vector2(0, 331)
 
 [node name="AutoCannon" parent="." instance=ExtResource("3_8olu8")]
 position = Vector2(245, 148)
+rotation = 0.428987
 
 [connection signal="pressed" from="UI/VBoxContainer/FullHealthButton" to="." method="_on_full_health_button_pressed"]
 [connection signal="pressed" from="UI/VBoxContainer/SlightlyDamagedButton" to="." method="_on_slightly_damaged_button_pressed"]
