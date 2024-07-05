@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dadwqwaj3mnx6"]
+[gd_scene load_steps=6 format=3 uid="uid://dadwqwaj3mnx6"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_07s8o"]
-[ext_resource type="Texture2D" uid="uid://c2bmcff0q6m5r" path="res://assets/Main Ship - Base - Full health.png" id="2_wo1uk"]
+[ext_resource type="Texture2D" uid="uid://c2bmcff0q6m5r" path="res://assets/main_ship/base/Main Ship - Base - Full health.png" id="2_0f1rj"]
+[ext_resource type="PackedScene" uid="uid://7an1chj35h8t" path="res://scenes/auto_cannon.tscn" id="3_kgo4e"]
 
 [sub_resource type="Animation" id="Animation_1lhpn"]
 length = 0.001
@@ -15,8 +16,10 @@ _data = {
 script = ExtResource("1_07s8o")
 
 [node name="Body" type="Sprite2D" parent="."]
-texture = ExtResource("2_wo1uk")
+texture = ExtResource("2_0f1rj")
 metadata/_edit_lock_ = true
+
+[node name="Weapon" parent="Body" instance=ExtResource("3_kgo4e")]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(1, -12, -1, -12, -5, -3, -14, 6, -14, 10, 14, 10, 14, 6, 5, -3)

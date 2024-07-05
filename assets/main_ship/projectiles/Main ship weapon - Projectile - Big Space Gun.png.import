@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0kr7ytqx83tx"
-path="res://.godot/imported/Main Ship - Base - Slight damage.png-5d25df189ed3c28bcac730d591d5f788.ctex"
+uid="uid://kabr47kcwtnh"
+path="res://.godot/imported/Main ship weapon - Projectile - Big Space Gun.png-6cdbf38d6fa973529a03fe7f8eea121d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Main Ship - Base - Slight damage.png"
-dest_files=["res://.godot/imported/Main Ship - Base - Slight damage.png-5d25df189ed3c28bcac730d591d5f788.ctex"]
+source_file="res://assets/main_ship/projectiles/Main ship weapon - Projectile - Big Space Gun.png"
+dest_files=["res://.godot/imported/Main ship weapon - Projectile - Big Space Gun.png-6cdbf38d6fa973529a03fe7f8eea121d.ctex"]
 
 [params]
 

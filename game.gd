@@ -16,3 +16,7 @@ func _on_damaged_button_pressed():
 
 func _on_very_damaged_button_pressed():
 	$Player.set_frame(Player.HealthFrame.HEAVILY_DAMAGED)
+
+
+func _on_toggle_firing_button_pressed():
+	$AutoCannon.is_firing = !$AutoCannon.is_firing
