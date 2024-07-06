@@ -1,15 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://bdvj032toxom1"]
+[gd_scene load_steps=3 format=3 uid="uid://bdvj032toxom1"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_ltn2x"]
 [ext_resource type="PackedScene" uid="uid://dadwqwaj3mnx6" path="res://scenes/player.tscn" id="2_1maaa"]
-[ext_resource type="PackedScene" uid="uid://7an1chj35h8t" path="res://scenes/auto_cannon.tscn" id="3_8olu8"]
 
 [node name="Game" type="Node"]
 script = ExtResource("1_ltn2x")
 
-[node name="Player" parent="." instance=ExtResource("2_1maaa")]
-visible = false
+[node name="Player" parent="." node_paths=PackedStringArray("projectiles_node") instance=ExtResource("2_1maaa")]
 position = Vector2(300, 301)
+projectiles_node = NodePath("../Projectiles")
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -44,9 +43,7 @@ zoom = Vector2(2, 2)
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(0, 331)
 
-[node name="AutoCannon" parent="." instance=ExtResource("3_8olu8")]
-position = Vector2(245, 148)
-rotation = 0.428987
+[node name="Projectiles" type="Node" parent="."]
 
 [connection signal="pressed" from="UI/VBoxContainer/FullHealthButton" to="." method="_on_full_health_button_pressed"]
 [connection signal="pressed" from="UI/VBoxContainer/SlightlyDamagedButton" to="." method="_on_slightly_damaged_button_pressed"]

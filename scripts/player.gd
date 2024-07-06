@@ -10,13 +10,20 @@ enum HealthFrame {
 }
 
 @export var speed: int = 200
+@export var projectiles_node: Node
 
 @onready var bodySprite = $Body
 
+func _ready():
+	assert(projectiles_node != null, "Projectiles Node not set!")
+	$AutoCannon.set_projectiles_node(projectiles_node)
+	#var projectiles_node = get_node(projectiles_node_path)
+	#print(projectiles_node.name)
+
 func _physics_process(delta):
 	var direction := Input.get_vector("move_left", "move_right", "move_up", "move_down")
-	if direction != Vector2.ZERO:
-		print(direction)
+	#if direction != Vector2.ZERO:
+		#print(direction)
 	
 	var next_position: Vector2 = direction * speed * delta
 	

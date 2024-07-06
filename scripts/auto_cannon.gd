@@ -8,15 +8,13 @@ var is_firing := true
 var can_fire := true
 # We set a minimum to ensure the animation plays smoothly at low fire rates
 var min_fps := 20
+var projectiles_node: Node
 
 @onready var source1 = $ProjectileSource1
 @onready var source2 = $ProjectileSource2
 @onready var cooldown_timer = $Cooldown
 @onready var shot_delay_timer = $ShotDelay
 @onready var projectile_scene = preload(PROJECTILE_PATH)
-
-#func _ready():
-	#ResourceLoader.load_threaded_request(PROJECTILE_PATH)
 
 func _physics_process(_delta):
 	if !(is_firing && can_fire):
@@ -56,6 +54,10 @@ func _on_frame_changed():
 
 func fire_from_marker(marker: Marker2D):
 	var projectile = projectile_scene.instantiate()
-	add_child(projectile)
-	projectile.position = marker.position
+	#get_tree().get_current_scene().add_child(projectile)
+	projectiles_node.add_child(projectile)
+	projectile.global_position = marker.global_position
 	projectile.set_speed(projectile_speed)
+
+func set_projectiles_node(value: Node):
+	projectiles_node = value

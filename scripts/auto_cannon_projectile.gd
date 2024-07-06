@@ -10,7 +10,7 @@ func _physics_process(delta):
 	#var direction = Vector2.UP.rotated(rotation)
 	
 	# This seems to work just fine?
-	var direction = Vector2.RIGHT
+	var direction = Vector2.UP
 	position += direction * speed * delta
 
 func _on_hitbox_body_entered(body):

@@ -19,7 +19,7 @@ script = ExtResource("1_07s8o")
 texture = ExtResource("2_0f1rj")
 metadata/_edit_lock_ = true
 
-[node name="Weapon" parent="Body" instance=ExtResource("3_kgo4e")]
+[node name="AutoCannon" parent="." instance=ExtResource("3_kgo4e")]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(1, -12, -1, -12, -5, -3, -14, 6, -14, 10, 14, 10, 14, 6, 5, -3)
