@@ -1,1 +1,6 @@
+General
 	Implement object pools for projectiles
+	Fix frame rate issue with high auto cannon fire rate (low cooldown)
+	
+Enemies
+	Modify Kla'ed Torpedo Ship animations to have torpedos as separate objects

@@ -1,23 +1,23 @@
 [gd_scene load_steps=10 format=3 uid="uid://dj3dq8e3m2y17"]
 
-[ext_resource type="Texture2D" uid="uid://bpol36sra5fsl" path="res://assets/main_ship/projectiles/Main ship weapon - Projectile - Auto cannon bullet.png" id="1_7q1o6"]
-[ext_resource type="Script" path="res://scripts/auto_cannon_projectile.gd" id="2_50d1i"]
-[ext_resource type="Script" path="res://scripts/damage.gd" id="2_ay5f6"]
+[ext_resource type="Script" path="res://scripts/auto_cannon_projectile.gd" id="1_tt20j"]
+[ext_resource type="Script" path="res://scripts/damage.gd" id="2_h1tsb"]
+[ext_resource type="Texture2D" uid="uid://bpol36sra5fsl" path="res://assets/main_ship/projectiles/Main ship weapon - Projectile - Auto cannon bullet.png" id="3_ehm6q"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rcdjp"]
-atlas = ExtResource("1_7q1o6")
+atlas = ExtResource("3_ehm6q")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_243mx"]
-atlas = ExtResource("1_7q1o6")
+atlas = ExtResource("3_ehm6q")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dj4kw"]
-atlas = ExtResource("1_7q1o6")
+atlas = ExtResource("3_ehm6q")
 region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hmibs"]
-atlas = ExtResource("1_7q1o6")
+atlas = ExtResource("3_ehm6q")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6nahg"]
@@ -47,10 +47,10 @@ height = 12.0
 [node name="AutoCannonProjectile" type="Area2D"]
 collision_layer = 2
 collision_mask = 4
-script = ExtResource("2_50d1i")
+script = ExtResource("1_tt20j")
 
 [node name="Damage" type="Node" parent="."]
-script = ExtResource("2_ay5f6")
+script = ExtResource("2_h1tsb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_6nahg")
