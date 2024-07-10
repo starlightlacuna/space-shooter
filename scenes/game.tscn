@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://game.gd" id="1_ltn2x"]
 [ext_resource type="PackedScene" uid="uid://dadwqwaj3mnx6" path="res://scenes/spacecraft/player/player.tscn" id="2_1maaa"]
-[ext_resource type="PackedScene" uid="uid://bhanyxvm7juwq" path="res://scenes/spacecraft/kla'ed/kla'ed_torpedo_ship.tscn" id="3_lca4u"]
+[ext_resource type="Script" path="res://scripts/spawner.gd" id="4_lguqc"]
 
 [node name="Game" type="Node"]
 script = ExtResource("1_ltn2x")
@@ -47,7 +47,8 @@ position = Vector2(0, 331)
 
 [node name="Projectiles" type="Node" parent="."]
 
-[node name="Kla\'edTorpedoShip" parent="." instance=ExtResource("3_lca4u")]
+[node name="Spawner" type="Node2D" parent="."]
+script = ExtResource("4_lguqc")
 
 [connection signal="pressed" from="UI/VBoxContainer/FullHealthButton" to="." method="_on_full_health_button_pressed"]
 [connection signal="pressed" from="UI/VBoxContainer/SlightlyDamagedButton" to="." method="_on_slightly_damaged_button_pressed"]

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/auto_cannon_projectile.gd" id="1_tt20j"]
 [ext_resource type="Texture2D" uid="uid://bpol36sra5fsl" path="res://assets/main_ship/projectiles/Main ship weapon - Projectile - Auto cannon bullet.png" id="3_ehm6q"]
-[ext_resource type="PackedScene" uid="uid://ckwlw0lbb554j" path="res://scenes/components/hurtbox_component.tscn" id="3_r0o7d"]
+[ext_resource type="PackedScene" uid="uid://ckwlw0lbb554j" path="res://scenes/components/hurtbox_component.tscn" id="3_ni5j7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rcdjp"]
 atlas = ExtResource("3_ehm6q")
@@ -64,7 +64,7 @@ position = Vector2(2.38419e-07, 4.17233e-07)
 scale = Vector2(0.5, 0.8)
 metadata/_edit_lock_ = true
 
-[node name="HurtboxComponent" parent="." instance=ExtResource("3_r0o7d")]
+[node name="HurtboxComponent" parent="." instance=ExtResource("3_ni5j7")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent"]
 position = Vector2(0, -1)

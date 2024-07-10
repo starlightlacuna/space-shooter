@@ -4,3 +4,6 @@ General
 	
 Enemies
 	Modify Kla'ed Torpedo Ship animations to have torpedos as separate objects
+
+Licensing
+	Add license files to external code and assets

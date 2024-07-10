@@ -1,6 +1,6 @@
 extends AnimatedSprite2D
 
-@export_range(0.1, 5.0) var cooldown := 0.5
+@export_range(0.1, 5.0) var cooldown := 0.2
 @export var projectile_speed := 200
 
 var is_firing := true
