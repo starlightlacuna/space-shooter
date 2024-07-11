@@ -1,161 +1,161 @@
 [gd_scene load_steps=87 format=3 uid="uid://bhanyxvm7juwq"]
 
-[ext_resource type="Script" path="res://scenes/spacecraft/kla'ed/kla'ed_torpedo_ship.gd" id="1_7ok6x"]
-[ext_resource type="Texture2D" uid="uid://bct1tbuh142og" path="res://assets/kla'ed/torpedo_ship/Kla'ed - Torpedo Ship - Weapons.png" id="2_efxx4"]
-[ext_resource type="Texture2D" uid="uid://5um8ypsq6r05" path="res://assets/kla'ed/torpedo_ship/Kla'ed - Torpedo Ship - Base.png" id="3_s2eq4"]
-[ext_resource type="Texture2D" uid="uid://m2jpe5edaa8s" path="res://assets/kla'ed/torpedo_ship/Kla'ed - Torpedo Ship - Destruction.png" id="4_1olxt"]
-[ext_resource type="Texture2D" uid="uid://bpbwwp15ih1uc" path="res://assets/kla'ed/torpedo_ship/Kla'ed - Torpedo Ship - Loaded.png" id="5_ga72m"]
-[ext_resource type="Texture2D" uid="uid://ch0gtawbxk30h" path="res://assets/kla'ed/torpedo_ship/Kla'ed - Torpedo Ship - Reloading.png" id="6_q6rqa"]
-[ext_resource type="Texture2D" uid="uid://d4bxggovrxcpd" path="res://assets/kla'ed/torpedo_ship/Kla'ed - Torpedo Ship - Engine.png" id="7_mxliy"]
-[ext_resource type="PackedScene" uid="uid://b470j6ijb5y30" path="res://scenes/components/health_component.tscn" id="8_olpkw"]
-[ext_resource type="PackedScene" uid="uid://b0ml053l2twis" path="res://scenes/components/hitbox_component.tscn" id="9_8nnob"]
-[ext_resource type="Script" path="res://scripts/states/state_machine.gd" id="10_wf2ek"]
-[ext_resource type="Script" path="res://scenes/spacecraft/kla'ed/seek.gd" id="11_exgyx"]
-[ext_resource type="Script" path="res://scenes/spacecraft/kla'ed/attack.gd" id="12_4a4uk"]
-[ext_resource type="Script" path="res://scenes/spacecraft/kla'ed/reload.gd" id="13_r72w8"]
+[ext_resource type="Script" path="res://scripts/spacecraft/imperial/torpedo_ship/imperial_torpedo_ship.gd" id="1_5srhr"]
+[ext_resource type="Texture2D" uid="uid://bct1tbuh142og" path="res://assets/kla'ed/torpedo_ship/Kla'ed - Torpedo Ship - Weapons.png" id="2_g26tf"]
+[ext_resource type="Texture2D" uid="uid://5um8ypsq6r05" path="res://assets/kla'ed/torpedo_ship/Kla'ed - Torpedo Ship - Base.png" id="3_wxw3p"]
+[ext_resource type="Texture2D" uid="uid://m2jpe5edaa8s" path="res://assets/kla'ed/torpedo_ship/Kla'ed - Torpedo Ship - Destruction.png" id="4_r1h24"]
+[ext_resource type="Texture2D" uid="uid://bpbwwp15ih1uc" path="res://assets/kla'ed/torpedo_ship/Kla'ed - Torpedo Ship - Loaded.png" id="5_hqv8n"]
+[ext_resource type="Texture2D" uid="uid://ch0gtawbxk30h" path="res://assets/kla'ed/torpedo_ship/Kla'ed - Torpedo Ship - Reloading.png" id="6_xcvfe"]
+[ext_resource type="Texture2D" uid="uid://d4bxggovrxcpd" path="res://assets/kla'ed/torpedo_ship/Kla'ed - Torpedo Ship - Engine.png" id="7_50s2g"]
+[ext_resource type="PackedScene" uid="uid://b470j6ijb5y30" path="res://scenes/components/health_component.tscn" id="8_i5rk0"]
+[ext_resource type="PackedScene" uid="uid://b0ml053l2twis" path="res://scenes/components/hitbox_component.tscn" id="9_26g0x"]
+[ext_resource type="Script" path="res://scripts/states/state_machine.gd" id="10_8j4a7"]
+[ext_resource type="Script" path="res://scripts/spacecraft/imperial/torpedo_ship/seek.gd" id="11_78fgq"]
+[ext_resource type="Script" path="res://scripts/spacecraft/imperial/torpedo_ship/attack.gd" id="12_ojoqr"]
+[ext_resource type="Script" path="res://scripts/spacecraft/imperial/torpedo_ship/reload.gd" id="13_mxhjl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qxvba"]
-atlas = ExtResource("2_efxx4")
+atlas = ExtResource("2_g26tf")
 region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mnffn"]
-atlas = ExtResource("2_efxx4")
+atlas = ExtResource("2_g26tf")
 region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oitqo"]
-atlas = ExtResource("2_efxx4")
+atlas = ExtResource("2_g26tf")
 region = Rect2(128, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5s4nr"]
-atlas = ExtResource("2_efxx4")
+atlas = ExtResource("2_g26tf")
 region = Rect2(192, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l8g4g"]
-atlas = ExtResource("2_efxx4")
+atlas = ExtResource("2_g26tf")
 region = Rect2(256, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nyegb"]
-atlas = ExtResource("2_efxx4")
+atlas = ExtResource("2_g26tf")
 region = Rect2(320, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ro3q1"]
-atlas = ExtResource("2_efxx4")
+atlas = ExtResource("2_g26tf")
 region = Rect2(384, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o0yah"]
-atlas = ExtResource("2_efxx4")
+atlas = ExtResource("2_g26tf")
 region = Rect2(448, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0rtht"]
-atlas = ExtResource("2_efxx4")
+atlas = ExtResource("2_g26tf")
 region = Rect2(512, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lnit1"]
-atlas = ExtResource("2_efxx4")
+atlas = ExtResource("2_g26tf")
 region = Rect2(576, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cm05s"]
-atlas = ExtResource("2_efxx4")
+atlas = ExtResource("2_g26tf")
 region = Rect2(640, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_epnpj"]
-atlas = ExtResource("2_efxx4")
+atlas = ExtResource("2_g26tf")
 region = Rect2(704, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ggfqg"]
-atlas = ExtResource("2_efxx4")
+atlas = ExtResource("2_g26tf")
 region = Rect2(768, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oit13"]
-atlas = ExtResource("2_efxx4")
+atlas = ExtResource("2_g26tf")
 region = Rect2(832, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t07nr"]
-atlas = ExtResource("2_efxx4")
+atlas = ExtResource("2_g26tf")
 region = Rect2(896, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_edxeb"]
-atlas = ExtResource("2_efxx4")
+atlas = ExtResource("2_g26tf")
 region = Rect2(960, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jhpti"]
-atlas = ExtResource("4_1olxt")
+atlas = ExtResource("4_r1h24")
 region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ikuae"]
-atlas = ExtResource("4_1olxt")
+atlas = ExtResource("4_r1h24")
 region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p1ldy"]
-atlas = ExtResource("4_1olxt")
+atlas = ExtResource("4_r1h24")
 region = Rect2(128, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f03e1"]
-atlas = ExtResource("4_1olxt")
+atlas = ExtResource("4_r1h24")
 region = Rect2(192, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g4tvn"]
-atlas = ExtResource("4_1olxt")
+atlas = ExtResource("4_r1h24")
 region = Rect2(256, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wqvc6"]
-atlas = ExtResource("4_1olxt")
+atlas = ExtResource("4_r1h24")
 region = Rect2(320, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_memdx"]
-atlas = ExtResource("4_1olxt")
+atlas = ExtResource("4_r1h24")
 region = Rect2(384, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6x3uv"]
-atlas = ExtResource("4_1olxt")
+atlas = ExtResource("4_r1h24")
 region = Rect2(448, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_im20x"]
-atlas = ExtResource("4_1olxt")
+atlas = ExtResource("4_r1h24")
 region = Rect2(512, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b7iow"]
-atlas = ExtResource("4_1olxt")
+atlas = ExtResource("4_r1h24")
 region = Rect2(576, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e4fei"]
-atlas = ExtResource("6_q6rqa")
+atlas = ExtResource("6_xcvfe")
 region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eofne"]
-atlas = ExtResource("6_q6rqa")
+atlas = ExtResource("6_xcvfe")
 region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_awg4j"]
-atlas = ExtResource("6_q6rqa")
+atlas = ExtResource("6_xcvfe")
 region = Rect2(128, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_27vpk"]
-atlas = ExtResource("6_q6rqa")
+atlas = ExtResource("6_xcvfe")
 region = Rect2(192, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r8pi5"]
-atlas = ExtResource("6_q6rqa")
+atlas = ExtResource("6_xcvfe")
 region = Rect2(256, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wfspo"]
-atlas = ExtResource("6_q6rqa")
+atlas = ExtResource("6_xcvfe")
 region = Rect2(320, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lo3c1"]
-atlas = ExtResource("6_q6rqa")
+atlas = ExtResource("6_xcvfe")
 region = Rect2(384, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rjam6"]
-atlas = ExtResource("6_q6rqa")
+atlas = ExtResource("6_xcvfe")
 region = Rect2(448, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1j8av"]
-atlas = ExtResource("6_q6rqa")
+atlas = ExtResource("6_xcvfe")
 region = Rect2(512, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r460n"]
-atlas = ExtResource("6_q6rqa")
+atlas = ExtResource("6_xcvfe")
 region = Rect2(576, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_q8p1y"]
@@ -215,7 +215,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_s2eq4")
+"texture": ExtResource("3_wxw3p")
 }],
 "loop": false,
 "name": &"default",
@@ -258,7 +258,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_ga72m")
+"texture": ExtResource("5_hqv8n")
 }],
 "loop": false,
 "name": &"loaded",
@@ -301,43 +301,43 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jnt0g"]
-atlas = ExtResource("7_mxliy")
+atlas = ExtResource("7_50s2g")
 region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fbn2e"]
-atlas = ExtResource("7_mxliy")
+atlas = ExtResource("7_50s2g")
 region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bjep6"]
-atlas = ExtResource("7_mxliy")
+atlas = ExtResource("7_50s2g")
 region = Rect2(128, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p7dec"]
-atlas = ExtResource("7_mxliy")
+atlas = ExtResource("7_50s2g")
 region = Rect2(192, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6jyp1"]
-atlas = ExtResource("7_mxliy")
+atlas = ExtResource("7_50s2g")
 region = Rect2(256, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2fym5"]
-atlas = ExtResource("7_mxliy")
+atlas = ExtResource("7_50s2g")
 region = Rect2(320, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uvhf5"]
-atlas = ExtResource("7_mxliy")
+atlas = ExtResource("7_50s2g")
 region = Rect2(384, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_28fm6"]
-atlas = ExtResource("7_mxliy")
+atlas = ExtResource("7_50s2g")
 region = Rect2(448, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2fyie"]
-atlas = ExtResource("7_mxliy")
+atlas = ExtResource("7_50s2g")
 region = Rect2(512, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x7wxx"]
-atlas = ExtResource("7_mxliy")
+atlas = ExtResource("7_50s2g")
 region = Rect2(576, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qg2hu"]
@@ -440,7 +440,7 @@ tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.5, 0.7, 0.9, 1.1, 1.3, 1.5),
+"times": PackedFloat32Array(0.4, 0.6, 0.8, 1, 1.2, 1.4),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "values": [{
 "args": [],
@@ -630,12 +630,12 @@ states/Start/position = Vector2(162, 29)
 transitions = ["Kla'ed Torpedo Ship_destroy", "End", SubResource("AnimationNodeStateMachineTransition_bqwm6"), "Start", "Kla'ed Torpedo Ship_loaded", SubResource("AnimationNodeStateMachineTransition_c01f6"), "Kla'ed Torpedo Ship_loaded", "Kla'ed Torpedo Ship_attack", SubResource("AnimationNodeStateMachineTransition_kqpos"), "Kla'ed Torpedo Ship_attack", "Kla'ed Torpedo Ship_idle", SubResource("AnimationNodeStateMachineTransition_ee4yl"), "Kla'ed Torpedo Ship_idle", "Kla'ed Torpedo Ship_reload", SubResource("AnimationNodeStateMachineTransition_66t5e"), "Kla'ed Torpedo Ship_reload", "Kla'ed Torpedo Ship_loaded", SubResource("AnimationNodeStateMachineTransition_qcc6g"), "Kla'ed Torpedo Ship_loaded", "Kla'ed Torpedo Ship_destroy", SubResource("AnimationNodeStateMachineTransition_tjnlu"), "Kla'ed Torpedo Ship_attack", "Kla'ed Torpedo Ship_destroy", SubResource("AnimationNodeStateMachineTransition_yshth"), "Kla'ed Torpedo Ship_reload", "Kla'ed Torpedo Ship_destroy", SubResource("AnimationNodeStateMachineTransition_n2o7e"), "Kla'ed Torpedo Ship_idle", "Kla'ed Torpedo Ship_destroy", SubResource("AnimationNodeStateMachineTransition_brotm")]
 graph_offset = Vector2(-30, -15)
 
-[node name="Kla\'edTorpedoShip" type="CharacterBody2D"]
+[node name="ImperialTorpedoShip" type="CharacterBody2D"]
 collision_layer = 0
 collision_mask = 0
 motion_mode = 1
 platform_floor_layers = 0
-script = ExtResource("1_7ok6x")
+script = ExtResource("1_5srhr")
 
 [node name="Body" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_q8p1y")
@@ -659,9 +659,9 @@ libraries = {
 tree_root = SubResource("AnimationNodeStateMachine_igord")
 anim_player = NodePath("../AnimationPlayer")
 
-[node name="HealthComponent" parent="." instance=ExtResource("8_olpkw")]
+[node name="HealthComponent" parent="." instance=ExtResource("8_i5rk0")]
 
-[node name="HitboxComponent" parent="." instance=ExtResource("9_8nnob")]
+[node name="HitboxComponent" parent="." instance=ExtResource("9_26g0x")]
 collision_layer = 4
 collision_mask = 0
 
@@ -669,11 +669,11 @@ collision_mask = 0
 shape = SubResource("RectangleShape2D_jj4t8")
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
-script = ExtResource("10_wf2ek")
+script = ExtResource("10_8j4a7")
 initial_state = NodePath("Seek")
 
 [node name="Seek" type="Node" parent="StateMachine" node_paths=PackedStringArray("attack_state")]
-script = ExtResource("11_exgyx")
+script = ExtResource("11_78fgq")
 attack_state = NodePath("../Attack")
 
 [node name="Timer" type="Timer" parent="StateMachine/Seek"]
@@ -681,11 +681,12 @@ wait_time = 2.0
 one_shot = true
 
 [node name="Attack" type="Node" parent="StateMachine" node_paths=PackedStringArray("reload_state")]
-script = ExtResource("12_4a4uk")
+script = ExtResource("12_ojoqr")
 reload_state = NodePath("../Reload")
 
-[node name="Reload" type="Node" parent="StateMachine"]
-script = ExtResource("13_r72w8")
+[node name="Reload" type="Node" parent="StateMachine" node_paths=PackedStringArray("seek_state")]
+script = ExtResource("13_mxhjl")
+seek_state = NodePath("../Seek")
 
 [node name="Timer" type="Timer" parent="StateMachine/Reload"]
 one_shot = true
@@ -708,6 +709,7 @@ position = Vector2(20, -8)
 [node name="TorpedoSource5" type="Marker2D" parent="."]
 position = Vector2(-20, -8)
 
+[connection signal="animation_finished" from="AnimationTree" to="StateMachine/Reload" method="_on_animation_tree_animation_finished"]
 [connection signal="zeroed" from="HealthComponent" to="." method="_on_health_component_zeroed"]
 [connection signal="timeout" from="StateMachine/Seek/Timer" to="StateMachine/Seek" method="_on_timer_timeout"]
 [connection signal="timeout" from="StateMachine/Reload/Timer" to="StateMachine/Reload" method="_on_timer_timeout"]

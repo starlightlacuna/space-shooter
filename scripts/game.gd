@@ -19,7 +19,7 @@ func _on_very_damaged_button_pressed():
 
 
 func _on_toggle_firing_button_pressed():
-	$Player/Body/Weapon.is_firing = !$Player/Body/Weapon.is_firing
+	$Player/AutoCannon.is_firing = !$Player/AutoCannon.is_firing
 
 
 func _on_torpedo_ship_attack_button_pressed():

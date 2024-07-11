@@ -2,13 +2,14 @@ extends State
 
 @export var reload_state: State
 
-var transition_to_reload := false
+var transition_to_reload: bool
 
 func _ready():
 	assert(reload_state, "Reload State not set!")
 
 func enter(message: Dictionary = {}):
 	super(message)
+	transition_to_reload = false
 	var animation_tree = owner.get_node("AnimationTree")
 	animation_tree["parameters/playback"].travel("Kla'ed Torpedo Ship_attack")
 

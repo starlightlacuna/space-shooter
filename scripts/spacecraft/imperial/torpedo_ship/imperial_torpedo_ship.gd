@@ -4,7 +4,7 @@ var player: Player
 var torpedo_sources := []
 var torpedo_index := 0
 var projectiles_node: Node
-var torpedo_scene := preload("res://scenes/spacecraft/kla'ed/kla'ed_torpedo.tscn")
+var torpedo_scene := preload("res://scenes/spacecraft/imperial/imperial_torpedo.tscn")
 
 enum State { Move, Seek, Attack, Reload, Disable }
 

@@ -1,4 +1,4 @@
-class_name KlaedTorpedo
+class_name ImperialTorpedo
 extends CharacterBody2D
 
 @export var speed = 200
