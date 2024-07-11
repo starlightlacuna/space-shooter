@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bdvj032toxom1"]
+[gd_scene load_steps=5 format=3 uid="uid://bdvj032toxom1"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_ltn2x"]
 [ext_resource type="PackedScene" uid="uid://dadwqwaj3mnx6" path="res://scenes/spacecraft/player/player.tscn" id="2_1maaa"]
+[ext_resource type="PackedScene" uid="uid://dsppsvpjj6762" path="res://scenes/spacecraft/kla'ed/kla'ed_torpedo.tscn" id="4_k65pu"]
 [ext_resource type="Script" path="res://scripts/spawner.gd" id="4_lguqc"]
 
 [node name="Game" type="Node"]
@@ -38,6 +39,10 @@ text = "Very Damaged"
 layout_mode = 2
 text = "Toggle Firing"
 
+[node name="TorpedoShipAttackButton" type="Button" parent="UI/VBoxContainer"]
+layout_mode = 2
+text = "Torpedo Ship Attack"
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(320, 180)
 zoom = Vector2(2, 2)
@@ -47,11 +52,17 @@ position = Vector2(0, 331)
 
 [node name="Projectiles" type="Node" parent="."]
 
-[node name="Spawner" type="Node2D" parent="."]
+[node name="Spawner" type="Node2D" parent="." node_paths=PackedStringArray("projectiles_node")]
 script = ExtResource("4_lguqc")
+projectiles_node = NodePath("../Projectiles")
+
+[node name="Kla\'edTorpedo" parent="." instance=ExtResource("4_k65pu")]
+position = Vector2(188, 306)
+collision_layer = 8
 
 [connection signal="pressed" from="UI/VBoxContainer/FullHealthButton" to="." method="_on_full_health_button_pressed"]
 [connection signal="pressed" from="UI/VBoxContainer/SlightlyDamagedButton" to="." method="_on_slightly_damaged_button_pressed"]
 [connection signal="pressed" from="UI/VBoxContainer/DamagedButton" to="." method="_on_damaged_button_pressed"]
 [connection signal="pressed" from="UI/VBoxContainer/VeryDamagedButton" to="." method="_on_very_damaged_button_pressed"]
 [connection signal="pressed" from="UI/VBoxContainer/ToggleFiringButton" to="." method="_on_toggle_firing_button_pressed"]
+[connection signal="pressed" from="UI/VBoxContainer/TorpedoShipAttackButton" to="." method="_on_torpedo_ship_attack_button_pressed"]

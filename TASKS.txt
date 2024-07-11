@@ -1,9 +1,11 @@
 General
 	Implement object pools for projectiles
 	Fix frame rate issue with high auto cannon fire rate (low cooldown)
+	Refactor projectiles code to have a base class?
 	
 Enemies
 	Modify Kla'ed Torpedo Ship animations to have torpedos as separate objects
+	Rename Kla'ed ships to something without an apostrophe
 
 Licensing
 	Add license files to external code and assets
