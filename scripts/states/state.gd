@@ -7,7 +7,7 @@ func unhandled_input(event: InputEvent):
 func process(delta: float):
 	pass
 	
-func physics_process(delta: float):
+func process_physics(delta: float):
 	pass
 
 func enter(message: Dictionary = {}):

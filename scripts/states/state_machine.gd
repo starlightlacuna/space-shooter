@@ -29,7 +29,7 @@ func _process(delta: float) -> void:
 		transition_to(state_transition.target_state, state_transition.message)
 
 func _physics_process(delta: float) -> void:
-	var state_transition: StateTransition = state.physics_process(delta)
+	var state_transition: StateTransition = state.process_physics(delta)
 	if state_transition:
 		transition_to(state_transition.target_state, state_transition.message)
 	

@@ -13,7 +13,6 @@ func _ready():
 	
 	for n in 6:
 		torpedo_sources.push_back(get_node("TorpedoSource%s" % n))
-	print(torpedo_sources)
 
 func _physics_process(delta):
 	move_and_slide()
@@ -28,5 +27,7 @@ func initialize(p_player: Player, p_projectiles_node: Node):
 func spawn_torpedo():
 	var torpedo = torpedo_scene.instantiate()
 	projectiles_node.add_child(torpedo)
-	torpedo.global_position = torpedo_sources[torpedo_index].global_position
+	var torpedo_source = torpedo_sources[torpedo_index]
+	torpedo.global_position = torpedo_source.global_position
+	torpedo.global_rotation = torpedo_source.global_rotation
 	torpedo_index = (torpedo_index + 1) % torpedo_sources.size()

@@ -5,10 +5,8 @@ extends Area2D
 @export var damage = 10
 
 func _physics_process(delta):
-	#var direction = Vector2.UP.rotated(rotation)
-	
 	# This seems to work just fine?
-	var direction = Vector2.UP
+	var direction = Vector2.UP.rotated(rotation)
 	position += direction * speed * delta
 
 func set_speed(value):

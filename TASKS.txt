@@ -3,6 +3,9 @@ General
 	Fix frame rate issue with high auto cannon fire rate (low cooldown)
 	Refactor projectiles code to have a base class?
 	
+Player
+	Refactor AutoCannon attack to use the AnimationPlayer's call method track
+	
 Enemies
 	Modify Kla'ed Torpedo Ship animations to have torpedos as separate objects
 	Rename Kla'ed ships to something without an apostrophe

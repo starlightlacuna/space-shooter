@@ -1,6 +1,6 @@
-[gd_scene load_steps=86 format=3 uid="uid://bhanyxvm7juwq"]
+[gd_scene load_steps=87 format=3 uid="uid://bhanyxvm7juwq"]
 
-[ext_resource type="Script" path="res://scripts/kla'ed_torpedo_ship.gd" id="1_u5arl"]
+[ext_resource type="Script" path="res://scenes/spacecraft/kla'ed/kla'ed_torpedo_ship.gd" id="1_7ok6x"]
 [ext_resource type="Texture2D" uid="uid://bct1tbuh142og" path="res://assets/kla'ed/torpedo_ship/Kla'ed - Torpedo Ship - Weapons.png" id="2_efxx4"]
 [ext_resource type="Texture2D" uid="uid://5um8ypsq6r05" path="res://assets/kla'ed/torpedo_ship/Kla'ed - Torpedo Ship - Base.png" id="3_s2eq4"]
 [ext_resource type="Texture2D" uid="uid://m2jpe5edaa8s" path="res://assets/kla'ed/torpedo_ship/Kla'ed - Torpedo Ship - Destruction.png" id="4_1olxt"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" path="res://scripts/states/state_machine.gd" id="10_wf2ek"]
 [ext_resource type="Script" path="res://scenes/spacecraft/kla'ed/seek.gd" id="11_exgyx"]
 [ext_resource type="Script" path="res://scenes/spacecraft/kla'ed/attack.gd" id="12_4a4uk"]
+[ext_resource type="Script" path="res://scenes/spacecraft/kla'ed/reload.gd" id="13_r72w8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qxvba"]
 atlas = ExtResource("2_efxx4")
@@ -461,6 +462,20 @@ tracks/2/keys = {
 "method": &"spawn_torpedo"
 }]
 }
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("StateMachine/Attack")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"transition"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_6jiiq"]
 tracks/0/type = "value"
@@ -620,7 +635,7 @@ collision_layer = 0
 collision_mask = 0
 motion_mode = 1
 platform_floor_layers = 0
-script = ExtResource("1_u5arl")
+script = ExtResource("1_7ok6x")
 
 [node name="Body" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_q8p1y")
@@ -641,7 +656,6 @@ libraries = {
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-active = false
 tree_root = SubResource("AnimationNodeStateMachine_igord")
 anim_player = NodePath("../AnimationPlayer")
 
@@ -664,9 +678,17 @@ attack_state = NodePath("../Attack")
 
 [node name="Timer" type="Timer" parent="StateMachine/Seek"]
 wait_time = 2.0
+one_shot = true
 
-[node name="Attack" type="Node" parent="StateMachine"]
+[node name="Attack" type="Node" parent="StateMachine" node_paths=PackedStringArray("reload_state")]
 script = ExtResource("12_4a4uk")
+reload_state = NodePath("../Reload")
+
+[node name="Reload" type="Node" parent="StateMachine"]
+script = ExtResource("13_r72w8")
+
+[node name="Timer" type="Timer" parent="StateMachine/Reload"]
+one_shot = true
 
 [node name="TorpedoSource0" type="Marker2D" parent="."]
 position = Vector2(8, -8)
@@ -688,3 +710,4 @@ position = Vector2(-20, -8)
 
 [connection signal="zeroed" from="HealthComponent" to="." method="_on_health_component_zeroed"]
 [connection signal="timeout" from="StateMachine/Seek/Timer" to="StateMachine/Seek" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateMachine/Reload/Timer" to="StateMachine/Reload" method="_on_timer_timeout"]

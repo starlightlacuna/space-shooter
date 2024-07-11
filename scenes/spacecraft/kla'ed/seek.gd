@@ -14,7 +14,7 @@ func enter(message: Dictionary = {}):
 	transition_to_attack = false
 	timer.start()
 
-func physics_process(delta):
+func process(delta):
 	if transition_to_attack:
 		var transition = StateTransition.new()
 		transition.target_state = attack_state

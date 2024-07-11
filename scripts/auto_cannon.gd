@@ -51,6 +51,7 @@ func fire_from_marker(marker: Marker2D):
 	var projectile = projectile_scene.instantiate()
 	projectiles_node.add_child(projectile)
 	projectile.global_position = marker.global_position
+	projectile.global_rotation = marker.global_rotation
 	projectile.set_speed(projectile_speed)
 
 func set_projectiles_node(value: Node):
