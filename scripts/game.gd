@@ -2,6 +2,8 @@ extends Node
 
 @onready var player = $Player
 
+
+
 func _on_full_health_button_pressed():
 	$Player.set_frame(Player.HealthFrame.HEALTHY)
 

@@ -18,22 +18,6 @@ projectiles_node = NodePath("../Projectiles")
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="FullHealthButton" type="Button" parent="UI/VBoxContainer"]
-layout_mode = 2
-text = "Full Health"
-
-[node name="SlightlyDamagedButton" type="Button" parent="UI/VBoxContainer"]
-layout_mode = 2
-text = "Slightly Damaged"
-
-[node name="DamagedButton" type="Button" parent="UI/VBoxContainer"]
-layout_mode = 2
-text = "Damaged"
-
-[node name="VeryDamagedButton" type="Button" parent="UI/VBoxContainer"]
-layout_mode = 2
-text = "Very Damaged"
-
 [node name="ToggleFiringButton" type="Button" parent="UI/VBoxContainer"]
 layout_mode = 2
 text = "Toggle Firing"
@@ -56,9 +40,5 @@ script = ExtResource("4_lguqc")
 player = NodePath("../Player")
 projectiles_node = NodePath("../Projectiles")
 
-[connection signal="pressed" from="UI/VBoxContainer/FullHealthButton" to="." method="_on_full_health_button_pressed"]
-[connection signal="pressed" from="UI/VBoxContainer/SlightlyDamagedButton" to="." method="_on_slightly_damaged_button_pressed"]
-[connection signal="pressed" from="UI/VBoxContainer/DamagedButton" to="." method="_on_damaged_button_pressed"]
-[connection signal="pressed" from="UI/VBoxContainer/VeryDamagedButton" to="." method="_on_very_damaged_button_pressed"]
 [connection signal="pressed" from="UI/VBoxContainer/ToggleFiringButton" to="." method="_on_toggle_firing_button_pressed"]
 [connection signal="pressed" from="UI/VBoxContainer/TorpedoShipAttackButton" to="." method="_on_torpedo_ship_attack_button_pressed"]
