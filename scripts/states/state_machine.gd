@@ -9,11 +9,11 @@ class_name StateMachine
 extends Node
 
 ## Emitted when transitioning to a new state.
-signal transitioned(state_name)
+signal transitioned(state_name: String)
 
 @export var initial_state: State
 
-@onready var state := initial_state
+@onready var state: State = initial_state
 
 func _ready() -> void:
 	state.enter()

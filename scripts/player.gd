@@ -1,6 +1,5 @@
-extends CharacterBody2D
-
 class_name Player
+extends CharacterBody2D
 
 enum HealthFrame {
 	HEALTHY,
@@ -14,19 +13,19 @@ enum HealthFrame {
 
 var frames: Dictionary = {}
 
-@onready var body_sprite = $Body
+@onready var body_sprite: Sprite2D = $Body
 
-func _ready():
+func _ready() -> void:
 	assert(projectiles_node != null, "Projectiles Node not set!")
-	$AutoCannon.set_projectiles_node(projectiles_node)
+	($AutoCannon as AutoCannon).set_projectiles_node(projectiles_node)
 	
 	frames[HealthFrame.HEALTHY] = preload("res://assets/main_ship/base/Main Ship - Base - Full health.png")
 	frames[HealthFrame.SLIGHTLY_DAMAGED] = preload("res://assets/main_ship/base/Main Ship - Base - Slight damage.png")
 	frames[HealthFrame.DAMAGED] = preload("res://assets/main_ship/base/Main Ship - Base - Damaged.png")
 	frames[HealthFrame.HEAVILY_DAMAGED] = preload("res://assets/main_ship/base/Main Ship - Base - Very damaged.png")
 
-func _physics_process(delta):
-	var direction := Input.get_vector("move_left", "move_right", "move_up", "move_down")
+func _physics_process(delta: float) -> void:
+	var direction: Vector2 = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	
 	var next_position: Vector2 = direction * speed * delta
 	
