@@ -22,13 +22,9 @@ offset_bottom = 40.0
 layout_mode = 2
 text = "Toggle Firing"
 
-[node name="TorpedoShipAttackButton" type="Button" parent="UI/VBoxContainer"]
-layout_mode = 2
-text = "Torpedo Ship Attack"
-
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(375, 222)
-zoom = Vector2(2.5, 2.5)
+zoom = Vector2(2, 2)
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(0, 331)
@@ -41,4 +37,3 @@ player = NodePath("../Player")
 projectiles_node = NodePath("../Projectiles")
 
 [connection signal="pressed" from="UI/VBoxContainer/ToggleFiringButton" to="." method="_on_toggle_firing_button_pressed"]
-[connection signal="pressed" from="UI/VBoxContainer/TorpedoShipAttackButton" to="." method="_on_torpedo_ship_attack_button_pressed"]

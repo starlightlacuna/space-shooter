@@ -14,7 +14,7 @@ func _ready():
 	for n in 6:
 		torpedo_sources.push_back(get_node("TorpedoSource%s" % n))
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	move_and_slide()
 
 func _on_health_component_zeroed():

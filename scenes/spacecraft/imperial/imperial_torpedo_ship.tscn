@@ -1,4 +1,4 @@
-[gd_scene load_steps=87 format=3 uid="uid://bhanyxvm7juwq"]
+[gd_scene load_steps=88 format=3 uid="uid://bhanyxvm7juwq"]
 
 [ext_resource type="Script" path="res://scripts/spacecraft/imperial/torpedo_ship/imperial_torpedo_ship.gd" id="1_5srhr"]
 [ext_resource type="Texture2D" uid="uid://bct1tbuh142og" path="res://assets/kla'ed/torpedo_ship/Kla'ed - Torpedo Ship - Weapons.png" id="2_g26tf"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" path="res://scripts/spacecraft/imperial/torpedo_ship/seek.gd" id="11_78fgq"]
 [ext_resource type="Script" path="res://scripts/spacecraft/imperial/torpedo_ship/attack.gd" id="12_ojoqr"]
 [ext_resource type="Script" path="res://scripts/spacecraft/imperial/torpedo_ship/reload.gd" id="13_mxhjl"]
+[ext_resource type="Script" path="res://scenes/spacecraft/imperial/move.gd" id="14_occj4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qxvba"]
 atlas = ExtResource("2_g26tf")
@@ -690,6 +691,9 @@ seek_state = NodePath("../Seek")
 
 [node name="Timer" type="Timer" parent="StateMachine/Reload"]
 one_shot = true
+
+[node name="Move" type="Node" parent="StateMachine"]
+script = ExtResource("14_occj4")
 
 [node name="TorpedoSource0" type="Marker2D" parent="."]
 position = Vector2(8, -8)

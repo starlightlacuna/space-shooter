@@ -1,16 +1,16 @@
 class_name State
 extends Node
 
-func unhandled_input(event: InputEvent):
+func unhandled_input(_event: InputEvent):
 	pass
 
-func process(delta: float):
+func process(_delta: float):
 	pass
 	
-func process_physics(delta: float):
+func process_physics(_delta: float):
 	pass
 
-func enter(message: Dictionary = {}):
+func enter(_message: Dictionary = {}):
 	print("Entering %s" % name)
 	#pass
 	

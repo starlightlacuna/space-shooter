@@ -9,12 +9,11 @@ var transition_to_seek: bool
 func _ready():
 	assert(seek_state, "Seek State not set!")
 
-func enter(message: Dictionary = {}):
-	super(message)
+func enter(_message: Dictionary = {}):
 	transition_to_seek = false
 	timer.start()
 
-func process(delta):
+func process(_delta):
 	if !transition_to_seek:
 		return
 	var state_transition := StateTransition.new()
@@ -25,6 +24,8 @@ func _on_timer_timeout():
 	var animation_tree = owner.get_node("AnimationTree")
 	animation_tree["parameters/playback"].travel("Kla'ed Torpedo Ship_reload")
 
+func exit():
+	pass
 
 func _on_animation_tree_animation_finished(anim_name):
 	if !anim_name == "Kla'ed Torpedo Ship/reload":
